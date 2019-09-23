@@ -5,4 +5,7 @@ INSERT INTO `user` (id, username, password, role) VALUES ('4', 'user2', '1234', 
 INSERT INTO `user` (id, username, password, role) VALUES ('5', 'user3', '1234', 'user');
 INSERT INTO `user` (id, username, password, role) VALUES ('6', 'user4', '1234', 'user');
 
+INSERT INTO `tourist` (writer, city, keyword, title) VALUES ('swag', '西安', '大学生', '西安三天两夜游');
+
+
 COMMIT;

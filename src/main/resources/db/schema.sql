@@ -16,3 +16,13 @@ CREATE TABLE `user` (
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
+
+
+DROP TABLE IF EXISTS `tourist`;
+CREATE TABLE `tourist` (
+  `writer` varchar(50) DEFAULT NULL ,
+  `city` varchar(255) DEFAULT NULL,
+  `keyWord` varchar(50) DEFAULT NULL,
+  `title` varchar(50) DEFAULT NULL,
+  primary key(`writer`)
+);

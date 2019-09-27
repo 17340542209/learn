@@ -20,9 +20,10 @@ ALTER TABLE `user` ADD UNIQUE (`phone`);
 
 DROP TABLE IF EXISTS `tourist`;
 CREATE TABLE `tourist` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `writer` varchar(50) DEFAULT NULL ,
   `city` varchar(255) DEFAULT NULL,
   `keyWord` varchar(50) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
-  primary key(`writer`)
+  primary key(`id`)
 );

@@ -2,13 +2,12 @@ package edu.hubu.learn.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.hubu.learn.entity.Tourist;
+
 import edu.hubu.learn.entity.User;
-import edu.hubu.learn.service.TouristService;
 import edu.hubu.learn.service.UserService;
 
 @Controller
@@ -18,8 +17,6 @@ public class IndexController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private TouristService touristService;
 
     @RequestMapping("/")
     public ModelAndView index() {
@@ -34,22 +31,6 @@ public class IndexController {
         User user = userService.getUser(1l);
         mav.addObject("user", user);
         mav.setViewName("user");
-        return mav;
-    }
-    @RequestMapping("/tourist")
-    public ModelAndView tourist() {
-        ModelAndView mav = new ModelAndView();
-        Tourist tourist = touristService.getTourist(1l);
-        mav.addObject("tourist", tourist);
-        mav.setViewName("tourist");
-        return mav;
-    }
-    @RequestMapping("/tourist/{id}")
-    public ModelAndView getTourist(@PathVariable Long id) {
-        ModelAndView mav = new ModelAndView();
-        Tourist tourist = touristService.getTourist(id);
-        mav.addObject("tourist", tourist);
-        mav.setViewName("tourist");
         return mav;
     }
 }

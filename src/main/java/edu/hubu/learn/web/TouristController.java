@@ -37,4 +37,18 @@ public class TouristController {
         return mav;
     }
 
+    @RequestMapping("/add")
+    public ModelAndView addTourist() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("tourist_add");
+        return mav;
+    }
+
+    @RequestMapping("/do_add")
+    public ModelAndView doAddTourist(Tourist tourist) {
+        tourist.setAvatar("");
+        touristService.addTourist(tourist);
+        ModelAndView mav = new ModelAndView("redirect:/tourist/list");
+        return mav;
+    }
 }

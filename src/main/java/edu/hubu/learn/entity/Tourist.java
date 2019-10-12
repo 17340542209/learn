@@ -15,4 +15,7 @@ public class Tourist {
     private String writer;
 
     private String title;
+
+	public void setAvatar(String string) {
+	}
 }

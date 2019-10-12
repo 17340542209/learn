@@ -23,4 +23,7 @@ public class TouristService {
     public List<Tourist> getTourists(){
         return touristDao.findAll();
     }
+
+	public void addTourist(Tourist tourist) {
+	}
 }

@@ -22,26 +22,25 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/tourist/list">列表</a></li>
+          <li role="presentation"><a href="/tourist/list">列表</a></li>
           <li role="presentation"><a href="/tourist/add">新增</a></li>
-          <li role="presentation" class="danger"><a href="/tourist/search">搜索</a></li>
+          <li role="presentation" class="active"><a href="#">修改</a></li>
+          <li role="presentation"><a href="/tourist/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>ID</th><th>作者</th><th>文章名称</th><th>删除</th><th>修改</th>
-          </thead>
-          <tbody>
-          <#list tourists as tourist>
-          <tr>
-          <td>${tourist.id}</td><td>${tourist.writer}</td><td>${tourist.title}</td>
-          <td><a href="/tourist/delete/${tourist.id}">删除</a></td>
-          <td><a href="/tourist/modify/${tourist.id}">修改</a></td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/tourist/do_modify">
+            <input type="hidden"id="id" name="id" value="${tourist.id}">
+            <div class="form-group">
+                <label for="writer">作者</label>
+                <input type="text" class="form-control" id="writer" name="writer" value="${tourist.writer}" placeholder="请输入姓名">
+            </div>
+            <div class="form-group">
+                <label for="title">文章名称</label>
+                <input type="text" class="form-control" id="title" name="title" value="${tourist.title}" placeholder="请输入文章名称">
+            </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>
